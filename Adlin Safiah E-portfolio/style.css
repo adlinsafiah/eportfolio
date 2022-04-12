@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz:700');
+
+$HOME: #D8BFD8;
+$BACKGROUND: #D8BFD8;
+$SKILLS: #D8BFD8;
+$RESUME: #D8BFD8;
+$CONTACT: #D8BFD8;
+
+@mixin btn-type($type, $shadow-color; darken($type, 10%), $color: white)
+{
+	background-color: $type;
+	color: $color;
+	box-shadow: 0 9px 0 $shadow-color, 0 9px 25px rgba(0,0,0, .7);
+	
+	&:active{
+		position: relative;
+		top: 6px;
+		box-shadow: 0 3px 0 $shadow-color, 0 3px 6px rgba(0,0,0, .7);
+}}
+
+.btn-3d{
+	font-family: 'yanone kaffeesatz';
+	font-weight: bold;
+	font-size: 2.5em;
+	text-align: center;
+	padding: .2em .3em;
+	border: none;
+	border-radius: 8px;
+	text-decoration: none;
+	display: inline-block;
+	min-width: 180px;
+	margin-bottom: 9px;
+	
+@include btn-type($HOME, darken(&HOME, 5%), $contact);
+}
+
+.btn-3d_background {
+	@include btn-type($BACKGROUND);
+}
+
+.btn-3d_skills {
+	@include btn-type($SKILLS);
+}
+
+.btn-3d_resume {
+	@include btn-type($RESUME);
+}
+
+.btn-3d_contact {
+	@include btn-type($CONTACT);
+}
+
+.btn-container {
+	text-align: center;
+	margin-top: 100px;
+	
+	.btn-3d {
+		margin: 40px;
+	}
+}
+
